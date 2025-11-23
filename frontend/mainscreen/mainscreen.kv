@@ -1,0 +1,100 @@
+<HomeScreen>:
+    BoxLayout:
+        orientation: "vertical"
+
+        GridLayout:
+            rows: 1
+            size_hint_y: 0.1
+
+            GridLayout:
+                cols: 1
+                size_hint_x: 0.9
+                Label:
+                    text: "name app"
+
+            GridLayout:
+                cols: 1
+                size_hint_x: 0.1
+                Button:
+                    text: "icon in4"
+                    on_release: root.infor_user()
+
+
+        GridLayout:
+            rows: 1
+            size_hint_y: 0.9
+            BoxLayout:
+                orientation: "vertical"
+                padding: 50
+                spacing: 20
+
+                Label:
+                    id: welcome_label
+                    text: "Chào mừng!"
+                    font_size: 20
+                    size_hint_y: 0.2
+
+                Button:
+                    text: "Dự đoán"
+                    size_hint_y: 0.2
+                    on_release: root.logout()
+                    background_color: 0, 0, 0, 0     # Ẩn nền mặc định của Button
+                    canvas.before:
+                        Color:
+                            rgba: 0.2, 0.6, 1, 1     # Màu nền xanh
+                        RoundedRectangle:
+                            pos: self.pos
+                            size: self.size
+                            radius: [20]             # Bo góc (30px)
+
+                Button:
+                    text: "genAI"
+                    size_hint_y: 0.2
+                    on_release: root.logout()
+                    background_color: 0, 0, 0, 0     # Ẩn nền mặc định của Button
+                    canvas.before:
+                        Color:
+                            rgba: 0.2, 0.6, 1, 1     # Màu nền xanh
+                        RoundedRectangle:
+                            pos: self.pos
+                            size: self.size
+                            radius: [20]             # Bo góc (30px)
+
+                Button:
+                    text: "Học tập"
+                    size_hint_y: 0.2
+                    on_release: root.logout()
+                    background_color: 0, 0, 0, 0     # Ẩn nền mặc định của Button
+                    canvas.before:
+                        Color:
+                            rgba: 0.2, 0.6, 1, 1     # Màu nền xanh
+                        RoundedRectangle:
+                            pos: self.pos
+                            size: self.size
+                            radius: [20]             # Bo góc (30px)
+
+                Button:
+                    text: "tư vấn"
+                    size_hint_y: 0.2
+                    on_release: root.logout()
+                    background_color: 0, 0, 0, 0     # Ẩn nền mặc định của Button
+                    canvas.before:
+                        Color:
+                            rgba: 0.2, 0.6, 1, 1     # Màu nền xanh
+                        RoundedRectangle:
+                            pos: self.pos
+                            size: self.size
+                            radius: [20]             # Bo góc (30px)
+
+                Button:
+                    text: "Đăng xuất"
+                    size_hint_y: 0.2
+                    on_release: root.logout()
+                    background_color: 0, 0, 0, 0     # Ẩn nền mặc định của Button
+                    canvas.before:
+                        Color:
+                            rgba: 0.2, 0.6, 1, 1     # Màu nền xanh
+                        RoundedRectangle:
+                            pos: self.pos
+                            size: self.size
+                            radius: [20]             # Bo góc (30px)

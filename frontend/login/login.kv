@@ -1,0 +1,67 @@
+<LoginScreen>:
+    BoxLayout:
+        orientation: "vertical"
+        padding: 50
+        spacing: 20
+
+        Label:
+            text: "Đăng nhập"
+            font_size: 32
+
+        TextInput:
+            id: username
+            hint_text: "Tên đăng nhập"
+            multiline: False
+
+        TextInput:
+            id: password
+            hint_text: "Mật khẩu"
+            password: True
+            multiline: False
+
+        Button:
+            text: "Đăng nhập"
+            on_release: root.login()
+
+        Label:
+            id: message
+            text: ""
+            font_size: 16
+            color: (1,0,0,1)
+
+        Button:
+            text: "Đăng ký"
+            on_release: None
+
+
+        Label:
+            text: "------------other------------"
+            font_size: 20
+
+
+        BoxLayout:
+            orientation: "horizontal"
+            size_hint: None, None
+            size: self.minimum_size
+            height: 100
+            spacing: 30
+            pos_hint: {"center_x": 0.5, "center_y": 0.05}  # Căn giữa theo chiều ngang
+
+            ImageButton:
+                source: "logo1.png"
+                size_hint: None, None
+                size: 80, 80
+                on_press: print("Logo 1 clicked!")
+
+            ImageButton:
+                source: "logo2.png"
+                size_hint: None, None
+                size: 80, 80
+                on_press: print("Logo 2 clicked!")
+
+            ImageButton:
+                source: "logo3.png"
+                size_hint: None, None
+                size: 80, 80
+                on_press: print("Logo 3 clicked!")
+
