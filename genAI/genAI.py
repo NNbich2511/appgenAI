@@ -1,14 +1,12 @@
-import torch
+from genAI.cliptexttrans import CLIP
+from genAI.VAE import VAE_Encoder
+from genAI.convert import load_from_standard_weights
+from genAI.decoder import VAE_Decoder
+from genAI.Unetmodel import Diffusion
 
-from cliptexttrans import CLIP
-from VAE import VAE_Encoder
-from decoder import VAE_Decoder
-from Unetmodel import Diffusion
-
-import convert
 
 def preload_models_from_standard_weights(ckpt_path, device):
-    state_dict = convert.load_from_standard_weights(ckpt_path, device)
+    state_dict = load_from_standard_weights(ckpt_path, device)
 
     encoder = VAE_Encoder().to(device)
     encoder.load_state_dict(state_dict['encoder'], strict=True)

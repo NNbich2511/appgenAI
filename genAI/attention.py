@@ -27,7 +27,7 @@ class SelfAttention(nn.Module):
         interim_shape = (batch_size, sequence_length, self.n_heads, self.d_head)
 
         # (Batch_Size, Seq_Len, Dim) -> (Batch_Size, Seq_Len, Dim * 3) -> 3 tensor of shape (Batch_Size, Seq_Len, Dim)
-        q, k, v = self.in_proj(x).chunk(3, dim=-1)
+        q, k, v = self.in_proj(x).chunk(3, dim=-1) # create 3 linear q, k, v
 
         # (Batch_Size, Seq_Len, Dim) -> (Batch_Size, Seq_Len, H, Dim / H) -> (Batch_Size, H, Seq_Len, Dim / H)
         q = q.view(interim_shape).transpose(1, 2)

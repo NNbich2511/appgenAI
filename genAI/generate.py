@@ -1,10 +1,9 @@
-
-import genAI
 import pipeline
 from PIL import Image
-from pathlib import Path
 from transformers import CLIPTokenizer
 import torch
+
+from genAI import preload_models_from_standard_weights
 
 DEVICE = "cpu"
 
@@ -19,7 +18,7 @@ print(f"Using device: {DEVICE}")
 
 tokenizer = CLIPTokenizer("D://openaiclip-vit-base-patch16//vocab.json", merges_file="D://openaiclip-vit-base-patch16\merges.txt")
 model_file = "D://v1-5-pruned-emaonly.ckpt"
-models = genAI.preload_models_from_standard_weights(model_file, DEVICE)
+models = preload_models_from_standard_weights(model_file, DEVICE)
 
 ## TEXT TO IMAGE
 

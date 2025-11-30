@@ -1,0 +1,52 @@
+<genAIscreen>:
+    BoxLayout:
+        orientation: "vertical"
+        padding: 10
+        spacing: 10
+
+        Button:
+            text: "back"
+            size_hint_y: 0.1
+            on_release: root.logscreen()
+            background_color: 0,0,0,0
+            canvas.before:
+                Color:
+                    rgba: 0.2, 0.6, 1, 1
+                RoundedRectangle:
+                    pos: self.pos
+                    size: self.size
+                    radius: [20]
+        Label:
+            text: "Nhập prompt để tạo ảnh"
+            font_size: 20
+            size_hint_y: 0.1
+
+        TextInput:
+            id: promt
+            hint_text: "Nhập prompt"
+            multiline: False
+            size_hint_y: 0.1
+
+        Button:
+            text: "Gen AI"
+            size_hint_y: 0.1
+            on_release: root.create()
+            background_color: 0,0,0,0
+            canvas.before:
+                Color:
+                    rgba: 0.2, 0.6, 1, 1
+                RoundedRectangle:
+                    pos: self.pos
+                    size: self.size
+                    radius: [20]
+
+        Label:
+            id: status_label
+            text: "Chưa có thao tác"
+            size_hint_y: 0.05
+            font_size: 16
+            color: 1,0,0,1
+
+        Image:
+            id: output_img
+            size_hint_y: 0.65

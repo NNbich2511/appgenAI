@@ -22,5 +22,9 @@ class HomeScreen(Screen):
         )
         self.manager.current = "user"
 
+    def genAI(self):
+        genAi_screen = self.manager.get_screen("genAIscreen")
+        self.manager.current = "genAIscreen"
+
 if __name__ == "__main__":
     HomeScreen().run()
